@@ -16,8 +16,8 @@ class FIFOCache(BaseCaching):
         if key is None or item is None:
             return
 
-        if len(self.cache_data) >= BaseCaching.MAX_ITEMS and
-        key not in self.cache_data.keys():
+        if len(self.cache_data) >= BaseCaching.MAX_ITEMS and \
+                key not in self.cache_data.keys():
             oldest_key = self.q.popleft()
             self.cache_data.pop(oldest_key)
             print("DISCARD: ", oldest_key)

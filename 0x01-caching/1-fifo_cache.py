@@ -20,7 +20,7 @@ class FIFOCache(BaseCaching):
                 key not in self.cache_data.keys():
             oldest_key = self.q.popleft()
             self.cache_data.pop(oldest_key)
-            print("DISCARD: ", oldest_key)
+            print("DISCARD:", oldest_key)
         self.cache_data[key] = item
         self.q.append(key)
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-09-01 19:33+0300\n"
+"POT-Creation-Date: 2023-09-01 21:40+0300\n"
 "PO-Revision-Date: 2023-09-01 19:33+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -25,3 +25,11 @@ msgstr "Bienvenue chez Holberton"
 # fr header
 msgid "home_header"
 msgstr "Bonjour monde!"
+
+# users
+msgid "logged_in_as"
+msgstr "Vous êtes connecté en tant que %(username)s."
+
+msgid "not_logged_in"
+msgstr "Vous n'êtes pas connecté."
+

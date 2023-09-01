@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""this module starts a flask app"""
+"""
+module starts a flask application
+"""
 from flask import Flask, render_template
 from flask_babel import Babel
 
@@ -10,7 +12,8 @@ babel = Babel(app)
 class Config:
     """sets language variable"""
     LANGUAGES = ["en", "fr"]
-    TIMEZONE = 'UTC'
+    BABEL_DEFAULT_LOCALE = 'en'
+    BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
 # Set the config for the flask app
@@ -19,6 +22,7 @@ app.config.from_object(Config)
 
 @app.route('/')
 def hello():
+    """flush template"""
     return render_template('1-index.html')
 
 

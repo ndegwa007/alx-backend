@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
-"""this module starts a flask app"""
+
+"""
+module starts a flask application
+"""
+
 from flask import Flask, render_template
 
-
-app = Flask(__name_)
+# instantiate flask app
+app = Flask(__name__)
 
 
 @app.route('/')
 def hello():
+    """flush template"""
     return render_template('0-index.html')
 
 
 if __name__ == '__main__':
+    """run the app"""
     app.run()

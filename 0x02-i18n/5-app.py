@@ -50,10 +50,16 @@ def before_request():
 @babel.localeselector
 def get_locale():
     """specifies client locale and language preference"""
+    user = get_user()
+    g.user_locale = user['locale']
     locale = request.args.get('locale')
     if locale and locale in app.config['LANGUAGES']:
         return locale
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    elif g.user_locale is not None and \
+            g.user_locale in app.config['LANGUAGES']:
+        return g.user_locale
+    else:
+        return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route('/')
